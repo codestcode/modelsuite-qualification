@@ -61,9 +61,9 @@ const MyTasksList = ({ tasks, onRefresh }) => {
   return (
     <>
       <div className="flex flex-col gap-2">
-        {tasks.map((task, i) => (
+        {tasks.filter(Boolean).map((task, i) => (
           <div key={task._id}
-            className="task-card table-row-animate"
+            className="glass3d task-card table-row-animate rounded-xl"
             style={{ animationDelay: `${i * 0.06}s` }}>
 
             {/* Task info */}

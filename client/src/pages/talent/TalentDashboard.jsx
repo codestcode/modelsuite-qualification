@@ -36,7 +36,7 @@ const TalentDashboard = () => {
         {/* Header */}
         <div className="mb-7 page-section">
           <h1 className="text-[22px] font-semibold tracking-tight"
-            style={{ color: '#F0F0F0', fontFamily: 'Poppins, sans-serif' }}>
+            style={{ color: '#F0F0F0', fontFamily: 'Space Grotesk, sans-serif' }}>
             Welcome back, {user?.name?.split(' ')[0]}
           </h1>
           <p className="mt-0.5 text-[13px]" style={{ color: '#6B7280' }}>
