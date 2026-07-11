@@ -1,5 +1,6 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import Avatar from '../common/Avatar';
 
 /* ── Clean SVG line-art icons ── */
 const IconDashboard = () => (
@@ -69,24 +70,19 @@ const TalentSidebar = () => {
       {/* Footer */}
       <div className="px-3 pb-5">
         <div className="sidebar-divider mb-4" />
-        <div className="flex items-center justify-between gap-2 px-1">
-          <div className="flex items-center gap-2.5 min-w-0">
-            <div className="w-8 h-8 rounded-full avatar-talent flex items-center justify-center text-[12px] font-bold text-white shrink-0">
-              {user?.name?.[0]?.toUpperCase() ?? 'T'}
-            </div>
-            <div className="min-w-0">
-              <p className="text-[13px] font-semibold truncate max-w-[100px]"
-                style={{ color: '#E5E2E1', fontFamily: 'Inter, sans-serif' }}>
-                {user?.name}
-              </p>
-              <p className="text-[11px]" style={{ color: '#4B5563' }}>Talent</p>
-            </div>
+        <div className="flex items-center gap-3 px-2 py-2.5 rounded-xl hover:bg-white/[0.03] transition-colors">
+          <Avatar name={user?.name} variant="talent" />
+          <div className="flex-1 min-w-0">
+            <p className="text-[13px] font-semibold truncate"
+              style={{ color: '#E5E2E1', fontFamily: 'Space Grotesk, sans-serif' }}>
+              {user?.name}
+            </p>
+            <p className="text-[11px] font-medium" style={{ color: '#4B5563' }}>Talent</p>
           </div>
-
           <button
             onClick={() => { logout(); navigate('/login'); }}
             title="Sign out"
-            className="logout-btn">
+            className="logout-btn-modern">
             <IconLogout />
           </button>
         </div>
