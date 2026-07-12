@@ -1,6 +1,5 @@
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
-import Avatar from '../common/Avatar';
+import ProfileDropdown from '../common/ProfileDropdown';
 
 /* ── Clean SVG line-art icons ── */
 const IconDashboard = () => (
@@ -19,20 +18,12 @@ const IconTasks = () => (
   </svg>
 );
 
-const IconLogout = () => (
-  <svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M13 10H3M13 10l-3-3M13 10l-3 3"/>
-    <path d="M7 4H4a1 1 0 00-1 1v10a1 1 0 001 1h3"/>
-  </svg>
-);
-
 const navItems = [
   { label: 'My Dashboard', path: '/talent/dashboard', Icon: IconDashboard },
   { label: 'My Tasks',     path: '/talent/tasks',     Icon: IconTasks     },
 ];
 
 const TalentSidebar = () => {
-  const { user, logout } = useAuth();
   const navigate  = useNavigate();
   const location  = useLocation();
 
@@ -70,22 +61,7 @@ const TalentSidebar = () => {
       {/* Footer */}
       <div className="px-3 pb-5">
         <div className="sidebar-divider mb-4" />
-        <div className="flex items-center gap-3 px-2 py-2.5 rounded-xl hover:bg-white/[0.03] transition-colors">
-          <Avatar name={user?.name} variant="talent" />
-          <div className="flex-1 min-w-0">
-            <p className="text-[13px] font-semibold truncate"
-              style={{ color: '#E5E2E1', fontFamily: 'Space Grotesk, sans-serif' }}>
-              {user?.name}
-            </p>
-            <p className="text-[11px] font-medium" style={{ color: '#4B5563' }}>Talent</p>
-          </div>
-          <button
-            onClick={() => { logout(); navigate('/login'); }}
-            title="Sign out"
-            className="logout-btn-modern">
-            <IconLogout />
-          </button>
-        </div>
+        <ProfileDropdown />
       </div>
     </aside>
   );

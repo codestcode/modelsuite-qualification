@@ -23,7 +23,7 @@ const RegisterPage = () => {
     try {
       const { data } = await API.post('/auth/register', { name, email, password, role });
       login(data);
-      data.role === 'Admin' ? navigate('/admin/dashboard') : navigate('/talent/dashboard');
+      data.role === 'Admin' ? navigate('/admin/dashboard') : navigate('/profile-setup');
     } catch (err) {
       alert(err.response?.data?.message || 'Registration failed');
     }

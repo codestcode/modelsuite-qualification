@@ -21,7 +21,13 @@ const LoginPage = () => {
     try {
       const { data } = await API.post('/auth/login', { email, password });
       login(data);
-      data.role === 'Admin' ? navigate('/admin/dashboard') : navigate('/talent/dashboard');
+      if (data.role === 'Admin') {
+        navigate('/admin/dashboard');
+      } else if (data.profileComplete) {
+        navigate('/talent/dashboard');
+      } else {
+        navigate('/profile-setup');
+      }
     } catch (err) {
       alert(err.response?.data?.message || 'Login failed');
     }

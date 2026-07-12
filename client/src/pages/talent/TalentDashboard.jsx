@@ -28,10 +28,22 @@ const TalentDashboard = () => {
   const handleRefresh = () => { loadAvailable(); loadMyTasks(); };
 
   return (
-    <div className="flex min-h-screen" style={{ background: '#050505' }}>
+    <div className="flex min-h-screen" style={{ background: '#000000', position: 'relative', overflow: 'hidden' }}>
+      <div
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{
+          background:
+            'linear-gradient(to right, rgba(71,85,105,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(71,85,105,0.08) 1px, transparent 1px), radial-gradient(circle at 50% 60%, rgba(236,72,153,0.05) 0%, rgba(168,85,247,0.02) 40%, transparent 70%)',
+          backgroundSize: '40px 40px, 40px 40px, 100% 100%',
+        }}
+      />
+      {/* Background orbs */}
+      <div className="absolute z-0 pointer-events-none" style={{ width: 500, height: 500, borderRadius: '50%', background: '#3B82F6', filter: 'blur(120px)', opacity: 0.12, top: '-10%', right: '-5%', animation: 'pwOrbFloat 12s ease-in-out infinite' }} />
+      <div className="absolute z-0 pointer-events-none" style={{ width: 400, height: 400, borderRadius: '50%', background: '#8B5CF6', filter: 'blur(120px)', opacity: 0.12, bottom: '-8%', left: '-5%', animation: 'pwOrbFloat 12s ease-in-out infinite', animationDelay: '-4s' }} />
+      <div className="absolute z-0 pointer-events-none" style={{ width: 300, height: 300, borderRadius: '50%', background: '#EC4899', filter: 'blur(120px)', opacity: 0.06, top: '50%', left: '50%', transform: 'translate(-50%, -50%)', animation: 'pwOrbFloat 12s ease-in-out infinite', animationDelay: '-8s' }} />
       <TalentSidebar />
 
-      <main className="ml-[220px] flex-1 px-8 py-8" style={{ maxWidth: 'calc(100vw - 220px)' }}>
+      <main className="ml-[220px] flex-1 px-8 py-8 relative z-10" style={{ maxWidth: 'calc(100vw - 220px)' }}>
 
         {/* Header */}
         <div className="mb-7 page-section">

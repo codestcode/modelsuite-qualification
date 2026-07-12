@@ -1,6 +1,5 @@
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
-import Avatar from '../common/Avatar';
+import ProfileDropdown from '../common/ProfileDropdown';
 
 /* ── Clean SVG line-art icons (no emojis, no AI icons) ── */
 const IconDashboard = () => (
@@ -30,13 +29,6 @@ const IconTalents = () => (
   <svg className="nav-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
     <path d="M13 7a3 3 0 11-6 0 3 3 0 016 0z"/>
     <path d="M4 17a6 6 0 0112 0"/>
-  </svg>
-);
-
-const IconLogout = () => (
-  <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M13 10H3M13 10l-3-3M13 10l-3 3"/>
-    <path d="M7 4H4a1 1 0 00-1 1v10a1 1 0 001 1h3"/>
   </svg>
 );
 
