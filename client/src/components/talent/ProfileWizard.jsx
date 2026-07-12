@@ -58,7 +58,6 @@ const labelCls = 'text-[11px] font-semibold uppercase tracking-[0.6px] text-text
 /* ═══════════════════════════════════════
    Step 1 — Welcome
 ═══════════════════════════════════════ */
-// eslint-disable-next-line no-unused-vars
 const WelcomeStep = ({ profile, setProfile }) => {
   const { user } = useAuth();
   const initials = profile.name
@@ -124,7 +123,6 @@ const WelcomeStep = ({ profile, setProfile }) => {
 /* ═══════════════════════════════════════
    Step 2 — About You
 ═══════════════════════════════════════ */
-// eslint-disable-next-line no-unused-vars
 const AboutStep = ({ profile, setProfile }) => (
   <div className="pw-step-inner pw-about">
     <div className="pw-step-header">
@@ -165,7 +163,6 @@ const AboutStep = ({ profile, setProfile }) => (
 /* ═══════════════════════════════════════
    Step 3 — Skills
 ═══════════════════════════════════════ */
-// eslint-disable-next-line no-unused-vars
 const SkillsStep = ({ profile, toggleSkill }) => (
   <div className="pw-step-inner pw-skills">
     <div className="pw-step-header">
@@ -199,7 +196,6 @@ const SkillsStep = ({ profile, toggleSkill }) => (
 /* ═══════════════════════════════════════
    Step 4 — Interests
 ═══════════════════════════════════════ */
-// eslint-disable-next-line no-unused-vars
 const InterestsStep = ({ profile, toggleInterest }) => (
   <div className="pw-step-inner pw-interests">
     <div className="pw-step-header">
@@ -234,7 +230,6 @@ const InterestsStep = ({ profile, toggleInterest }) => (
 /* ═══════════════════════════════════════
    Step 5 — Complete
 ═══════════════════════════════════════ */
-// eslint-disable-next-line no-unused-vars
 const CompleteStep = ({ profile }) => {
   const initials = profile.name
     .split(' ')

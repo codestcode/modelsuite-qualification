@@ -3,10 +3,8 @@ import TalentSidebar from '../../components/talent/TalentSidebar';
 import AvailableTasksList from '../../components/talent/AvailableTasksList';
 import MyTasksList from '../../components/talent/MyTasksList';
 import { fetchAvailableTasks, fetchMyTasks } from '../../api/talent';
-import { useAuth } from '../../context/AuthContext';
 
 const TalentTasks = () => {
-  const { user } = useAuth();
   const [availableTasks, setAvailableTasks] = useState([]);
   const [myTasks, setMyTasks]               = useState([]);
   const [error, setError] = useState(null);

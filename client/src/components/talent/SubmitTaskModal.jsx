@@ -3,10 +3,10 @@ import { createPortal } from 'react-dom';
 import { submitTask } from '../../api/submissions';
 
 const SubmitTaskModal = ({ task, onClose, onSubmitted }) => {
-  if (!task) return null;
-
   const [file, setFile]   = useState(null);
   const [notes, setNotes] = useState('');
+
+  if (!task) return null;
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
