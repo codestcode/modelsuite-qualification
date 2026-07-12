@@ -40,7 +40,6 @@ const navItems = [
 ];
 
 const Sidebar = () => {
-  const { user, logout } = useAuth();
   const navigate  = useNavigate();
   const location  = useLocation();
 
@@ -78,22 +77,7 @@ const Sidebar = () => {
       {/* Footer */}
       <div className="px-3 pb-5">
         <div className="sidebar-divider mb-4" />
-        <div className="flex items-center gap-3 px-2 py-2.5 rounded-xl hover:bg-white/[0.03] transition-colors">
-          <Avatar name={user?.name} variant="admin" />
-          <div className="flex-1 min-w-0">
-            <p className="text-[13px] font-semibold truncate"
-              style={{ color: '#E5E2E1', fontFamily: 'Space Grotesk, sans-serif' }}>
-              {user?.name}
-            </p>
-            <p className="text-[11px] font-medium" style={{ color: '#4B5563' }}>Admin</p>
-          </div>
-          <button
-            onClick={() => { logout(); navigate('/login'); }}
-            title="Sign out"
-            className="logout-btn-modern">
-            <IconLogout />
-          </button>
-        </div>
+        <ProfileDropdown />
       </div>
     </aside>
   );
