@@ -57,29 +57,29 @@ const AvailableTasksList = ({ tasks, onClaimed }) => {
       <div className="filter-bar flex items-center gap-3 mb-6 overflow-x-auto pb-1">
         {/* Search */}
         <div className="relative shrink-0">
-          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[14px] text-text-faint pointer-events-none">⌕</span>
+          <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[16px] text-text-faint pointer-events-none">⌕</span>
           <input
             type="text"
             placeholder="Search tasks…"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="search-bar-marketplace pl-9 pr-4 py-2.5 rounded-xl text-[13px] w-56"
+            className="search-bar-marketplace pl-10 pr-5 py-3 rounded-xl text-[14px] w-72"
           />
         </div>
 
         {/* Category pills */}
-        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
+        <div className="flex items-center gap-2.5 overflow-x-auto no-scrollbar">
           {FILTERS.map((f) => (
             <button
               key={f.key}
               onClick={() => setActiveFilter(f.key)}
-              className={`filter-pill shrink-0 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-[12px] font-semibold tracking-wide transition-all duration-200 ${
+              className={`filter-pill shrink-0 inline-flex items-center gap-2 ${
                 activeFilter === f.key
                   ? 'filter-pill-active'
                   : 'filter-pill-inactive'
               }`}
             >
-              <span className="text-[13px]">{f.icon}</span>
+              <span className="text-[15px]">{f.icon}</span>
               {f.label}
             </button>
           ))}

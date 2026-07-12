@@ -28,8 +28,7 @@ const TalentSidebar = () => {
   const location  = useLocation();
 
   return (
-    <aside className="fixed inset-y-0 left-0 w-[220px] flex flex-col z-50"
-      style={{ background: '#0D0D0D' }}>
+    <aside className="admin-sidebar fixed inset-y-0 left-0 w-[232px] flex flex-col z-50">
 
       {/* Brand */}
       <div className="flex items-center justify-center px-5 py-6">
@@ -40,7 +39,7 @@ const TalentSidebar = () => {
 
       {/* Nav */}
       <nav className="flex flex-col gap-0.5 flex-1 px-3 pt-5">
-        <p className="text-[9.5px] font-semibold uppercase tracking-[0.12em] px-2 mb-2"
+        <p className="text-[10px] font-semibold uppercase tracking-[0.12em] px-2 mb-2"
           style={{ color: 'rgba(255,255,255,0.25)', fontFamily: 'Inter, sans-serif' }}>
           Menu
         </p>

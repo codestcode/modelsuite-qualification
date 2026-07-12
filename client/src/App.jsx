@@ -4,7 +4,9 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import SubmissionsPage from './pages/admin/SubmissionsPage';
+import TalentsPage from './pages/admin/TalentsPage';
 import TalentDashboard from './pages/talent/TalentDashboard';
+import TalentTasks from './pages/talent/TalentTasks';
 import ProfileWizard from './components/talent/ProfileWizard';
 import NotFoundPage from './pages/NotFoundPage';
 // "Unauthorized" message — confusing UX for the user
@@ -61,10 +63,26 @@ function App() {
             }
           />
           <Route
+            path="/talent/tasks"
+            element={
+              <PrivateRoute role="Talent">
+                <TalentTasks />
+              </PrivateRoute>
+            }
+          />
+          <Route
             path="/admin/submissions"
             element={
               <PrivateRoute role="Admin">
                 <SubmissionsPage />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/admin/talents"
+            element={
+              <PrivateRoute role="Admin">
+                <TalentsPage />
               </PrivateRoute>
             }
           />

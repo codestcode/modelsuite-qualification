@@ -63,10 +63,10 @@ const AdminDashboard = () => {
   });
 
   return (
-    <div className="flex min-h-screen" style={{ background: '#050505' }}>
+    <div className="page-bg flex min-h-screen">
       <Sidebar />
 
-      <main className="ml-[240px] flex-1 px-8 py-8" style={{ maxWidth: 'calc(100vw - 240px)' }}>
+      <main className="flex-1 pl-6 pr-8 py-8 relative z-10 min-w-0">
 
         {/* Page header */}
         <div className="flex items-center justify-between mb-7 page-section">

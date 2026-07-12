@@ -84,27 +84,17 @@ const SubmissionsPage = () => {
   const selectedCol = COLUMNS.find((c) => c.key === selectedStatus) || COLUMNS[0];
 
   return (
-    <div className="flex min-h-screen" style={{ background: '#000000', position: 'relative', overflow: 'hidden' }}>
-      {/* Background grid + glow */}
-      <div className="absolute inset-0 z-0 pointer-events-none"
-        style={{
-          background: `
-            linear-gradient(to right, rgba(71,85,105,0.08) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(71,85,105,0.08) 1px, transparent 1px),
-            radial-gradient(circle at 50% 60%, rgba(236,72,153,0.05) 0%, rgba(168,85,247,0.02) 40%, transparent 70%)
-          `,
-          backgroundSize: '40px 40px, 40px 40px, 100% 100%',
-        }}
-      />
+    <div className="page-bg flex min-h-screen">
+      {/* Background orbs */}
       <div className="absolute z-0 pointer-events-none" style={{ width: 500, height: 500, borderRadius: '50%', background: '#3B82F6', filter: 'blur(120px)', opacity: 0.12, top: '-10%', right: '-5%', animation: 'pwOrbFloat 12s ease-in-out infinite' }} />
       <div className="absolute z-0 pointer-events-none" style={{ width: 400, height: 400, borderRadius: '50%', background: '#8B5CF6', filter: 'blur(120px)', opacity: 0.12, bottom: '-8%', left: '-5%', animation: 'pwOrbFloat 12s ease-in-out infinite', animationDelay: '-4s' }} />
 
       <Sidebar />
 
-      <main className="ml-[240px] flex-1 relative z-10 flex flex-col" style={{ maxWidth: 'calc(100vw - 240px)' }}>
+      <main className="flex-1 relative z-10 flex flex-col min-w-0">
 
         {/* Header + Search */}
-        <div className="px-8 pt-8 pb-5 flex items-center justify-between shrink-0">
+        <div className="pl-6 pr-8 pt-8 pb-5 flex items-center justify-between shrink-0">
           <div>
             <h1 className="text-[26px] font-bold tracking-tight" style={{ color: '#E5E2E1' }}>Submissions</h1>
             <p className="mt-1 text-[13px]" style={{ color: '#6B7280' }}>Review talent submissions in kanban view.</p>
@@ -134,7 +124,7 @@ const SubmissionsPage = () => {
         </div>
 
         {/* Kanban Board */}
-        <div className="flex-1 flex gap-5 px-8 pb-8 overflow-x-auto" style={{ scrollbarWidth: 'thin', scrollbarColor: 'rgba(255,255,255,0.08) transparent' }}>
+        <div className="flex-1 flex gap-5 pl-6 pr-8 pb-8 overflow-x-auto" style={{ scrollbarWidth: 'thin', scrollbarColor: 'rgba(255,255,255,0.08) transparent' }}>
 
           {grouped.map((col) => (
             <div key={col.key} className="flex flex-col rounded-2xl flex-1 min-w-[320px]"
